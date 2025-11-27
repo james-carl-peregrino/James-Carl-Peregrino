@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James Carl Peregrino</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+:root {
+    --red: #ff6b6b;
+    --yellow: #ffd93d;
+    --soft-red: #ffe5e5;
+    --deep-red: #e63946;
+    --text-dark: #2e2e2e;
+    --white: #ffffff;
+    --glass-bg: rgba(255,255,255,0.35);
+}
+
+* { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffe5e5, #ffc6c6);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+body:hover { cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), auto; }
+
+
+.shape {
+    position: absolute;
+    z-index: -2;
+    opacity: 0;
+    animation: floatShape 7s infinite alternate ease-in-out,
+               fadeAppear 6s infinite alternate;
+}
+@keyframes floatShape { 
+    from { transform: translateY(0) rotate(0deg); }
+    to   { transform: translateY(-60px) rotate(360deg); }
+}
+@keyframes fadeAppear { 
+    0%,100% {opacity:0;}
+    50% {opacity:0.5;}
+}
+
+.shape-circle { border-radius:50%; background: var(--yellow); }
+.shape-circle2 { border-radius:50%; background: var(--red); }
+.shape-square { background: var(--yellow); border-radius:4px; }
+.shape-triangle {
+    width:0; height:0;
+    border-left:12px solid transparent;
+    border-right:12px solid transparent;
+    border-bottom:18px solid var(--deep-red);
+}
+.shape-line { width: 180px; height: 3px; border-top: 2px dashed var(--deep-red); opacity:0.15; }
+
+
+nav {
+    width:100%;
+    background: var(--red);
+    color: var(--white);
+    padding:12px 0;
+    position: fixed;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+nav ul { display:flex; justify-content:center; list-style:none; gap:35px; margin:0; padding:0; }
+nav a {
+    text-decoration:none;
+    color: var(--white);
+    padding:6px 12px;
+    border-radius:6px;
+    transition:0.3s ease;
+}
+nav a:hover, nav a.active {
+    background: var(--white);
+    color: var(--red);
+    transform: translateY(-2px);
+}
+
+
+
+header {
+    padding:150px 20px 100px;
+    text-align:center;
+    background: linear-gradient(135deg, var(--yellow), var(--red));
+    color: var(--white);
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius:90px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+header h1 {
+    font-size:50px;
+    animation: fadeSlideDown 1.2s ease;
+}
+header p { opacity:0.9; animation: fadeSlideUp 1.2s ease; }
+
+@keyframes fadeSlideDown {
+    from { opacity:0; transform:translateY(-25px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeSlideUp {
+    from { opacity:0; transform:translateY(25px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+
+
+.profile-section { max-width:900px; margin:70px auto; padding:20px; }
+
+.profile-card {
+    background: var(--glass-bg);
+    padding:45px 40px;
+    border-radius:20px;
+    backdrop-filter: blur(12px);
+    border:1px solid rgba(255,255,255,0.5);
+    box-shadow:0 8px 35px rgba(0,0,0,0.12);
+    animation: fadeCard 1.3s ease;
+}
+@keyframes fadeCard {
+    from { opacity:0; transform:translateY(40px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+
+
+.profile-card::after {
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border:3px dashed var(--yellow);
+    top:-65px;
+    right:-65px;
+    opacity:0.25;
+}
+
+
+.profile-image-container { text-align:center; margin-bottom:25px; }
+.profile-pic {
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:6px solid var(--red);
+    object-fit:cover;
+    box-shadow:0 4px 20px rgba(0,0,0,0.2);
+    transition:0.4s ease;
+}
+.profile-pic:hover {
+    transform:scale(1.08) rotate(3deg);
+    box-shadow:0 8px 30px rgba(255,80,80,0.7);
+}
+
+
+.about-box {
+    background: var(--white);
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    font-size:17px;
+    line-height:1.7;
+    color:#333;
+    box-shadow:0 4px 18px rgba(0,0,0,0.08);
+}
+
+
+.section-title {
+    font-size:34px;
+    color: var(--deep-red);
+    text-align:center;
+    margin-bottom:25px;
+    text-shadow:0 2px 5px rgba(0,0,0,0.15);
+    animation: glowTitle 2s infinite alternate;
+}
+
+@keyframes glowTitle {
+    from { text-shadow:0 0 10px rgba(255,180,180,0.7); }
+    to   { text-shadow:0 0 25px rgba(255,120,120,0.9); }
+}
+
+
+.subheading {
+    font-size:22px;
+    margin-top:40px;
+    color: var(--red);
+    border-left:6px solid var(--yellow);
+    padding-left:12px;
+}
+.info-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:18px 25px;
+}
+.info-grid div {
+    background: var(--soft-red);
+    padding:15px;
+    border-radius:12px;
+    border-left:6px solid var(--red);
+    font-size:16px;
+    transition:0.3s ease;
+}
+.info-grid div:hover {
+    transform: translateY(-4px);
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+
+.combined-section {
+    max-width:900px; 
+    margin:60px auto; 
+    padding:35px;
+    background:white; 
+    border-radius:20px;
+    box-shadow:0 8px 35px rgba(0,0,0,0.12);
+}
+
+.combined-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+    margin-bottom:30px;
+}
+
+
+.skill, .hobby, .strength, .achievement {
+    padding:14px;
+    border-radius:18px;
+    text-align:center;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:0.3s ease;
+}
+
+.skill { background: var(--red); color:white; }
+.hobby { background: var(--yellow); color:white; }
+.strength { border:2px solid var(--deep-red); color: var(--deep-red); }
+.achievement { 
+    background: var(--soft-red); 
+    border:1px solid var(--red); 
+    color: var(--deep-red);
+}
+
+
+.achievement img { 
+    width: 160px;
+    height: 160px;
+    object-fit: contain; 
+    transition:0.4s ease;
+}
+
+
+.achievement:hover img { transform:scale(1.15); }
+.skill:hover, .hobby:hover, .strength:hover {
+    transform: translateY(-5px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+footer {
+    text-align:center;
+    padding:25px;
+    background: var(--red);
+    color:white;
+    margin-top:50px;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+}
+
+
+@media(max-width:700px){ .info-grid { grid-template-columns:1fr; } }
+@media(max-width:400px){ .achievement img { width: 100px; height:100px; } }
+
+</style>
+</head>
+<body>
+
+<script>
+const shapeTypes = ['shape-circle','shape-circle2','shape-square','shape-triangle','shape-line'];
+for(let i=0;i<180;i++){
+    const div = document.createElement('div');
+    div.className = 'shape ' + shapeTypes[Math.floor(Math.random()*shapeTypes.length)];
+    div.style.top = Math.random()*window.innerHeight+'px';
+    div.style.left = Math.random()*window.innerWidth+'px';
+    div.style.width = (10+Math.random()*40)+'px';
+    div.style.height = (10+Math.random()*40)+'px';
+    div.style.animationDuration = (4+Math.random()*8)+'s';
+    div.style.animationDelay = (Math.random()*6)+'s';
+    document.body.appendChild(div);
+}
+</script>
+
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active">Profile</a></li>
+    </ul>
+</nav>
+
+
+<header>
+    <h1>James Carl Peregrino</h1>
+    <p>3rd Year BSIT Student</p>
+</header>
+
+
+<section id="info" class="profile-section">
+    <div class="profile-card">
+
+        <h2 class="section-title"><i class="fa-solid fa-id-card"></i> Profile Information</h2>
+
+        <div class="profile-image-container">
+            <img src="profile.jpg.jpg" class="profile-pic" alt="Profile Picture">
+        </div>
+
+        <div class="about-box">
+            Hello! I'm <strong>James Carl Peregrino</strong>, an aspiring software developer passionate about technology, creativity, and continuous growth. I enjoy solving problems, creating projects, and learning new programming skills.
+        </div>
+
+        <h3 class="subheading">Personal Details</h3>
+        <div class="info-grid">
+            <div>Name: James Carl Peregrino</div>
+            <div>Address: Carsadang bago 2 Imus Cavite</div>
+            <div>Age: 20</div>
+            <div>Birthdate: May 13, 2005</div>
+            <div>Contact: 09671549996</div>
+            <div>Email: s.jamescarl.peregrino@sscr.edu</div>
+        </div>
+
+        <h3 class="subheading">Education</h3>
+        <div class="info-grid">
+            <div>High School: Emiliano Tria Tirona MNHS</div>
+            <div>Years: 2017–2023</div>
+            <div>College: San Sebastian College - Recoletos de Cavite</div>
+            <div>Years: 2023–Present</div>
+        </div>
+    </div>
+</section>
+
+
+<section class="combined-section">
+    <h2 class="section-title"><i class="fa-solid fa-list"></i> Additional Information</h2>
+
+    <h3 class="subheading">Skills</h3>
+    <div class="combined-grid">
+        <div class="skill">Python</div>
+        <div class="skill">Java</div>
+        <div class="skill">HTML</div>
+    </div>
+
+    <h3 class="subheading">Hobbies</h3>
+    <div class="combined-grid">
+        <div class="hobby">Playing online games</div>
+        <div class="hobby">Basketball</div>
+        <div class="hobby">Guitar</div>
+        <div class="hobby">Traveling</div>
+    </div>
+
+    <h3 class="subheading">Achievements</h3>
+    <div class="combined-grid">
+        <div class="achievement"><img src="cisco1.png" alt="Cisco 1"> Cisco 1</div>
+        <div class="achievement"><img src="cisco2.png" alt="Cisco 2"> Cisco 2</div>
+        <div class="achievement"><img src="cisco3.png" alt="Cisco 3"> Cisco 3</div>
+
+        <div class="achievement"><img src="saylor1.png" alt="Saylor 1"> Saylor 1</div>
+        <div class="achievement"><img src="saylor2.png" alt="Saylor 2"> Saylor 2</div>
+        <div class="achievement"><img src="saylor3.png" alt="Saylor 3"> Saylor 3</div>
+        <div class="achievement"><img src="saylor4.png" alt="Saylor 4"> Saylor 4</div>
+        <div class="achievement"><img src="saylor5.png" alt="Saylor 5"> Saylor 5</div>
+    </div>
+
+    <h3 class="subheading">Strengths</h3>
+    <div class="combined-grid">
+        <div class="strength">Hardworking</div>
+        <div class="strength">Adaptable</div>
+        <div class="strength">Fast Learner</div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 James Carl Peregrino. All Rights Reserved.
+</footer>
+
+</body>
+</html>
