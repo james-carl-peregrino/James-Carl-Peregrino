@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Carl Peregrino </title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #d8b3b3, #b97a7a);
+            color: #fff;
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(124, 54, 54, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 80, 80, 0.4);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+     
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+  
+        .profile-pic {
+            display: block;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            border: 5px solid #b37a7a;
+            box-shadow: 0 0 15px rgba(255, 200, 200, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.07);
+            box-shadow: 0 0 22px rgba(255, 180, 180, 1);
+        }
+
+        h1 {
+            color: #ffdddd;
+            text-align: center;
+            font-size: 3.2rem;
+            letter-spacing: 4px;
+            margin-bottom: 35px;
+            text-shadow: 0 0 10px rgba(255, 200, 200, 0.6);
+        }
+
+        h2 {
+            color: #f1dede;
+            font-size: 1.9rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-left: 5px solid #e8b3b3;
+            padding-left: 10px;
+            text-shadow: 0 0 6px rgba(255, 180, 180, 0.4);
+        }
+
+        p, li {
+            font-size: 1.25rem;
+        }
+
+        ul {
+            list-style-type: "➤ ";
+            margin-left: 20px;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+       
+        .section {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: inset 0 0 8px rgba(255, 180, 180, 0.25);
+            border: 1px solid rgba(255, 220, 220, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1rem;
+            color: #ffe5e5;
+            opacity: 0.8;
+        }
+
+        
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 2.4rem; }
+            .profile-pic { width: 140px; height: 140px; }
+            p, li { font-size: 1.05rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <img src="profile.jpg.jpg" alt="Profile Picture" class="profile-pic">
+
+        <h1>RESUME</h1>
+
+        <h2>Name</h2>
+        <div class="section">
+            <p><span class="highlight">James Carl A. Peregrino</span></p>
+        </div>
+
+        <h2>Birthday</h2>
+        <div class="section">
+            <p>May 13, 2005</p>
+        </div>
+
+        <h2>Age</h2>
+        <div class="section">
+            <p>20</p>
+        </div>
+
+        <h2>Email</h2>
+        <div class="section">
+            <p>s.jamescarl.peregrino@sscr.edu</p>
+        </div>
+
+        <h2>Address</h2>
+        <div class="section">
+            <p>Carsadang Bago 2, Imus, Cavite</p>
+        </div>
+
+        <h2>Education</h2>
+        <div class="section">
+            <ul>
+                <li>Tinabunan Elementary School</li>
+                <li>Emiliano Tria Tirona Memorial National High School</li>
+                <li>San Sebastian College – Recoletos de Cavite</li>
+            </ul>
+        </div>
+
+        <h2>Objective</h2>
+        <div class="section">
+            <p>Motivated and detail-oriented college student majoring in Computer Science, seeking a summer internship to
+                leverage programming skills and gain hands-on experience in software development. Passionate about
+                technology and eager to contribute to innovative projects.</p>
+        </div>
+
+        <h2>Certificates and Awards</h2>
+        <div class="section">
+            <p>PRDV223: Organizational Culture, Diversity, and Ethics</p>
+            <p>CS202: Discrete Structures</p>
+            <p>PRDV104: Professional Etiquette</p>
+            <p>BUS200: Business Ethics</p>
+        </div>
+
+        <h2>Skills</h2>
+        <div class="section">
+            <ul>
+                <li>Programming: Java, C#, Python</li>
+            </ul>
+        </div>
+
+        <h2>Hobbies</h2>
+        <div class="section">
+            <ul>
+                <li>Gaming</li>
+                <li>Basketball</li>
+            </ul>
+        </div>
+
+        <footer>
+        </footer>
+
+    </div>
+
+</body>
+</html>

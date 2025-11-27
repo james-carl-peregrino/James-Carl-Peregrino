@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>James Carl Peregrino</title>
+    <style>
+        body {
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+
+<canvas id="cuteDogCanvas" width="600" height="600" style="background:white; border:2px solid #000; border-radius:20px;"></canvas>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('cuteDogCanvas');
+        const ctx = canvas.getContext('2d');
+        const center = { x: canvas.width / 2, y: canvas.height / 2 };
+
+        function drawCuteDog() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // --- Head (round + soft) ---
+            ctx.fillStyle = '#F7D58B';
+            ctx.beginPath();
+            ctx.arc(center.x, center.y, 180, 0, Math.PI * 2);
+            ctx.fill();
+
+            // --- Floppy Ears ---
+            ctx.fillStyle = '#D2A56A';
+            ctx.beginPath();
+            ctx.ellipse(center.x - 140, center.y - 40, 70, 120, 0.2, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.ellipse(center.x + 140, center.y - 40, 70, 120, -0.2, 0, Math.PI * 2);
+            ctx.fill();
+
+            // --- Eyes  ---
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(center.x - 60, center.y - 40, 45, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(center.x + 60, center.y - 40, 45, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Pupils
+            ctx.fillStyle = '#000000';
+            ctx.beginPath();
+            ctx.arc(center.x - 60, center.y - 40, 20, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(center.x + 60, center.y - 40, 20, 0, Math.PI * 2);
+            ctx.fill();
+
+            // ✨ Eye shine
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(center.x - 50, center.y - 50, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(center.x + 70, center.y - 50, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // --- Nose ---
+            ctx.fillStyle = '#000';
+            ctx.beginPath();
+            ctx.arc(center.x, center.y + 20, 22, 0, Math.PI * 2);
+            ctx.fill();
+
+            // --- Smile  ---
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 7;
+            ctx.beginPath();
+            ctx.arc(center.x, center.y + 70, 60, 0.2 * Math.PI, 0.8 * Math.PI);
+            ctx.stroke();
+
+            // --- Cute Tongue ---
+            ctx.fillStyle = '#FF7C8A';
+            ctx.beginPath();
+            ctx.ellipse(center.x, center.y + 100, 55, 50, 0, 0, Math.PI);
+            ctx.fill();
+        }
+
+        drawCuteDog();
+    });
+</script>
+
+</body>
+</html>
